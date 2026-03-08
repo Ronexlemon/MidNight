@@ -1,0 +1,56 @@
+pragma language_version 0.21.0;
+/***
+A module is a collection of definitions whose namespace is hidden from surrounding code.
+. By default, indetifiers defined within the body of a module are visible only within the module,i.e they are not exported from the module.
+
+**/
+
+//definition example
+module Mod1{
+    ...
+}
+
+module Mod2<T>{
+    ...
+}
+
+/***
+. Any identifier defined at or imported into the top level of a module can be exported from the module in one of two ways
+     1. by prefixing the definition with the export keyword, or by listing the identifier is a separate export declaration
+**/
+
+//The following module exports G and S and not F
+
+module M{
+    export {G};
+    export struct S { x:Uint<16>, y: Boolean}
+    circuit F(s:S):Boolean{
+        return s.y;
+    }
+    circuit G(s:S):Uint<16>{
+        return F(s)?s.x:0;
+    }
+
+}
+
+/**
+A module can be imported into another definition scope,bringing all its exported entries into that scope, potentially with a prefix.
+**/
+//i.e
+module Runner{
+    export {run}
+    circuit run():[]{}
+}
+import Runner;
+//run is now in scope
+import Runner prefix SomePrefix_;
+//SomePrefix_run is now in scope
+
+module Identity<T> {
+    export {id}
+    circuit id(x:T):T{
+        return x;
+    }
+}
+import Identity<Field>;
+//id is now in scope, with Field as type T
