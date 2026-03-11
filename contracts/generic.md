@@ -1,8 +1,8 @@
 # Generic parameter reference
-      * For generic modules, they are in scope within the module.
-      * For generic structures, they are in scope for the structure's fields.
-      * For generic circuits, they are scope in the circuit's parameters, its return types annotation and its body.
-      > In these scopes, a reference to a generic parameter (that is not otherwise shadowed by some other identifier binding) is either a type or a natural-number size
+      *For generic modules, they are in scope within the module.
+      *For generic structures, they are in scope for the structure's fields.
+      *For generic circuits, they are scope in the circuit's parameters, its return types annotation and its body.
+      >In these scopes, a reference to a generic parameter (that is not otherwise shadowed by some other identifier binding) is either a type or a natural-number size
 
 # CIRCUITS
   The basic operational element in compact is the *circuit* . > This corresponds closely to a function in most language but is compiled directly into a zero-knowledge circuit.
