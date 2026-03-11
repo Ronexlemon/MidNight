@@ -17,7 +17,8 @@
  A Compact circuit is considered *pure* if its computes its outputs from its inputs without reference to or modification of public state (via ledger) or private state (via witnesses).
  An impure circuit if the body of the circuit contains a ledger operation, a call to any inpure circuit, or a call to a witness
  **Example of pure circuits:**
- ```pure circuit c(a:Field):Field{
+ ```
+ pure circuit c(a:Field):Field{
     ...
  }
 
