@@ -1,0 +1,9 @@
+circuit c():Field{
+    const answer = 50;
+    {
+        const answer =35;
+        assert  answer != 60 "shadowing didn't work";
+        
+    }
+    return answer; // returns 42
+}

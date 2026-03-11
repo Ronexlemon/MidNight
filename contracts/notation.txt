@@ -1,0 +1,24 @@
+Notation:
+  The syntax of compact program is given by an EBNF grammar. The notation conventions in the grammar:
+        . Terminals are in bold monospaced font
+        . Non-terminals are in emphasized font 
+        . Alternation is indicated by a vertical bar (|)
+        . Repetition of zero or more items is indicated by enclosing them in curly braces({})
+        . Optional items are indicated by enclosing them in square brackets ([])
+
+Scopes:
+   The primary local scopes are defined in:
+       1. Structure types:
+                 . All generic parameter in a structure type declaration are visible only within its declaration
+       2. Modules:
+                 . All identifiers defined inside a module are visible only within it unless the are explicitly exported
+       3. Circuits:
+                 . The Circuits parameters,generic parameter and any const bindings defined inside its body are local to that Circuit
+       4.Blocks:
+                .  All idnetifiers defined by a const binding inside a block are visible only within it.
+       5.For Loops:
+                . All identifiers introduced in a for loop are visible only inside that for loop
+       6. Anonymous circuits:
+                . Parameters of an anonymous circuits are visible only inside that for loop.
+       7. Constructor: 
+                . The constructor's parameter and any const bindings defined inside its body are visible only within the constructor
